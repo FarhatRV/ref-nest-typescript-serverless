@@ -1,0 +1,18 @@
+service: serverless-typescript-nestjs-example
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  main:
+    handler: dist/main.handler
+    tags: 
+      Creator: Farhat
+    events:
+      - http:
+          method: GET
+          path: /hello
